@@ -35,6 +35,7 @@ return {
           gitsigns = true,
           treesitter = true,
           mason = true,
+          neotree = true,
           telescope = true,
           which_key = true,
           native_lsp = {
