@@ -18,7 +18,7 @@ return {
       filtered_items = {
         visible = true,
         hide_dotfiles = false,
-        -- hide_gitignored = true,
+        hide_gitignored = true,
       },
       -- Migliora la visualizzazione della struttura directory
       indent = {
