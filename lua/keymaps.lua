@@ -45,4 +45,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Helper function to map keys
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
+end
+
+-- Neotree
+map('n', '<leader>n', ':Neotree reveal<CR>', { desc = 'Toggle NeoTree' })
+
 -- vim: ts=2 sts=2 sw=2 et

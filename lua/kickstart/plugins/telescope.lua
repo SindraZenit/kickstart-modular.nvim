@@ -61,7 +61,33 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            hidden = true,
+            -- Optional to exclude .git and other directories
+            find_command = {
+              'rg',
+              '--files',
+              '--hidden',
+              '--glob',
+              '!**/.git/*',
+              '--glob',
+              '!**/.cache/*',
+              '--glob',
+              '!**/node_modules/*',
+              '--glob',
+              '!**/.npm/*',
+              '--glob',
+              '!**/dist/*',
+              '--glob',
+              '!**/build/*',
+              '--glob',
+              '!**/.Trash/*',
+              '--glob',
+              '!**/.local/*',
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
